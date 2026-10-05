@@ -1,0 +1,62 @@
+.nv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 6%;
+}
+.nv .logo {
+  margin: 0;
+}
+.hero {
+  text-align: center;
+  padding: 70px 6% 40px;
+  max-width: 900px;
+  margin: auto;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.hero p {
+  color: var(--mu);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+.hero .btn {
+  margin: 6px;
+}
+.feat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  padding: 40px 6% 80px;
+  max-width: 1150px;
+  margin: auto;
+}
+.feat .card {
+  transition: 0.3s;
+}
+.feat .card:hover {
+  transform: translateY(-6px);
+  border-color: var(--p);
+}
+.feat span {
+  font-size: 2rem;
+}
+.feat h3 {
+  margin: 10px 0 6px;
+}
+.feat p {
+  color: var(--mu);
+  font-size: 0.9rem;
+}
+.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.show {
+  opacity: 1;
+  transform: none;
+  transition: 0.7s;
+}

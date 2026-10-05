@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard · Stack Flow</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside id="sidebar"></aside>
+      <main>
+        <div class="top">
+          <h1>Dashboard</h1>
+          <p class="sub">Your shop at a glance</p>
+        </div>
+        <button
+          id="seed"
+          class="btn"
+          style="display: none; margin-bottom: 18px"
+          onclick="seed()"
+        >
+          ✨ Load demo data
+        </button>
+        <div class="grid g4" id="stats"></div>
+        <div class="grid g2">
+          <div class="card">
+            <h3>Last 7 days</h3>
+            <div class="lg"><span>🟦 Sales</span><span>🟥 Expenses</span></div>
+            <div class="chart" id="chart"></div>
+          </div>
+          <div class="card">
+            <h3>⚠️ Low stock</h3>
+            <div class="tw">
+              <table>
+                <tbody id="low"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Recent sales</h3>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="recent"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../js/common.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

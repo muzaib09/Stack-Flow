@@ -1,0 +1,14 @@
+/* Expenses page styles */
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.chip {
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: var(--card);
+  border: 1px solid var(--bd);
+  font-size: 0.85rem;
+}
