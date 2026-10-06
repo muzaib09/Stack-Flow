@@ -37,11 +37,6 @@ function logout() {
   location.href = "login.html";
 }
 function shell(active) {
-  const me = SF.users().find((u) => u.email === SF.me());
-  if (!me) {
-    location.href = "login.html";
-    return;
-  }
   const L = [
     ["dashboard", "📊", "Dashboard"],
     ["buy", "📦", "Buy Stock"],
@@ -54,5 +49,5 @@ function shell(active) {
       (l) =>
         `<a class="nav ${l[0] == active ? "on" : ""}" href="${l[0]}.html">${l[1]}<span class="lbl">${l[2]}</span></a>`,
     ).join("") +
-    `<div class="user"><b>${esc(me.name)}</b><div style="color:var(--mu);margin:2px 0 10px;overflow:hidden;text-overflow:ellipsis">${esc(me.email)}</div><button class="btn ghost sm" onclick="logout()">Logout</button></div>`;
+    `<div class="user"><b>Admin</b><div style="color:var(--mu);margin:2px 0 10px;overflow:hidden;text-overflow:ellipsis">admin@stackflow.com</div><button class="btn ghost sm" onclick="logout()">Logout</button></div>`;
 }
