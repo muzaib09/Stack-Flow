@@ -23,5 +23,5 @@ $("#f").onsubmit = async (e) => {
   }
 
   toast("Account created! Redirecting...");
-  setTimeout(() => (location.href = "login.html"), 1200);
+  setTimeout(() => (window.location.replace('login.html')), 1200);
 };

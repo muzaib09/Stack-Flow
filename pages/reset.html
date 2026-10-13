@@ -15,19 +15,6 @@
         <p class="sub">Enter the code and choose a new password</p>
         <form id="f">
           <div class="f">
-            <label>Email</label
-            ><input
-              id="email"
-              type="email"
-              placeholder="you@shop.com"
-              required
-            />
-          </div>
-          <div class="f">
-            <label>Reset code</label
-            ><input id="code" type="text" placeholder="6-digit code" required />
-          </div>
-          <div class="f">
             <label>New password</label
             ><input
               id="pass"
@@ -36,12 +23,16 @@
               required
             />
           </div>
-          <button class="btn">Update password</button>
+          <button type="submit" class="btn" id="btn">
+            <span id="btnText">Update password</span>
+            <span id="loader" class="loader"></span>
+          </button>
         </form>
         <div class="links"><a href="login.html">← Back to login</a></div>
       </div>
     </div>
     <script src="../js/common.js"></script>
-    <script src="../js/reset.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="../js/reset.js"></script>
   </body>
 </html>
