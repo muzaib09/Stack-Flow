@@ -24,12 +24,15 @@
               required
             />
           </div>
-          <button class="btn">Send reset code</button>
+          <button type="submit" class="btn" id="btn">
+            <span id="btnText">Send reset code</span>
+            <span id="loader" class="loader"></span>
+          </button>
         </form>
         <div class="links"><a href="login.html">← Back to login</a></div>
       </div>
-    </div>
     <script src="../js/common.js"></script>
-    <script src="../js/forgot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="../js/forgot.js"></script>
   </body>
 </html>

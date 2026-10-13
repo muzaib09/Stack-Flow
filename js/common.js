@@ -32,10 +32,7 @@ function toast(msg, type, ms = 3000) {
   t.append(d);
   setTimeout(() => d.remove(), ms);
 }
-function logout() {
-  localStorage.removeItem("sf_session");
-  location.href = "login.html";
-}
+
 function shell(active) {
   const L = [
     ["dashboard", "📊", "Dashboard"],
@@ -49,5 +46,5 @@ function shell(active) {
       (l) =>
         `<a class="nav ${l[0] == active ? "on" : ""}" href="${l[0]}.html">${l[1]}<span class="lbl">${l[2]}</span></a>`,
     ).join("") +
-    `<div class="user"><b>Admin</b><div style="color:var(--mu);margin:2px 0 10px;overflow:hidden;text-overflow:ellipsis">admin@stackflow.com</div><button class="btn ghost sm" onclick="logout()">Logout</button></div>`;
+    `<div class="user"><b>Admin</b><div style="color:var(--mu);margin:2px 0 10px;overflow:hidden;text-overflow:ellipsis">admin@stackflow.com</div><button class="btn ghost sm">Logout</button></div>`;
 }

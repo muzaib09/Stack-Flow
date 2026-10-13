@@ -18,6 +18,6 @@ $("#f").onsubmit =async (e) => {
       return
   }
       toast(data.user.aud);
-  location.href = "dashboard.html";
+  window.location.replace('dashboard.html')
 }
 

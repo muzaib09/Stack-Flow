@@ -1,21 +1,19 @@
-$("#email").value = new URLSearchParams(location.search).get("email") || "";
-$("#f").onsubmit = (e) => {
+import supabase from "./crediantials.js";
+let btn = document.querySelector(".btn");
+
+$("#f").onsubmit = async (e) => {
   e.preventDefault();
-  const r = JSON.parse(localStorage.getItem("sf_reset") || "null"),
-    em = $("#email").value.trim().toLowerCase(),
-    p = $("#pass").value;
-  if (
-    !r ||
-    r.email !== em ||
-    r.code !== $("#code").value.trim() ||
-    Date.now() > r.exp
-  )
-    return toast("Invalid or expired code", "err");
+  const p = $("#pass").value;
   if (p.length < 6) return toast("Password must be 6+ characters", "err");
-  const U = SF.users();
-  U.find((u) => u.email === em).pass = SF.hash(p);
-  SF.saveUsers(U);
-  localStorage.removeItem("sf_reset");
+  btn.disabled = true;
+  btn.classList.add("loading");
+  const { error } = await supabase.auth.updateUser({ password: p });
+  if (error) {
+    btn.disabled = false;
+    btn.classList.remove("loading");
+    toast(error.message, "err");
+    return
+  }
   toast("Password updated!");
-  setTimeout(() => (location.href = "login.html"), 1200);
+  setTimeout(() => (window.location.replace('login.html')), 1200);
 };
